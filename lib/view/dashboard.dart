@@ -1,7 +1,11 @@
 import 'package:first_program/view/arear_of_circle.dart';
+import 'package:first_program/view/arithmetic_radio_view.dart';
 import 'package:first_program/view/armstrong_view.dart';
+import 'package:first_program/view/column_view.dart';
+import 'package:first_program/view/column_view2.dart';
 import 'package:first_program/view/first_view.dart';
 import 'package:first_program/view/layout_view.dart';
+import 'package:first_program/view/list_tile_view.dart';
 import 'package:first_program/view/palindrome_view.dart';
 import 'package:first_program/view/simple_interest.dart';
 import 'package:flutter/material.dart';
@@ -74,6 +78,44 @@ class Dashboard extends StatelessWidget {
                 );
               },
               child: const Text("Go to Layout_View"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ColumnView()),
+                );
+              },
+              child: const Text("Go to Column View"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ColumnView2()),
+                );
+              },
+              child: const Text("Go to Column View2"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const ListTileView()),
+                );
+              },
+              child: const Text("Go to List Tile"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const ArithmeticRadioView(),
+                  ),
+                );
+              },
+              child: const Text("Go to Arithmetic"),
             ),
           ],
         ),
