@@ -9,17 +9,27 @@ import 'package:first_program/view/first_view.dart';
 import 'package:first_program/view/layout_view.dart';
 import 'package:first_program/view/list_tile_view.dart';
 import 'package:first_program/view/load_image_view.dart';
+import 'package:first_program/view/main_screen_view.dart';
 import 'package:first_program/view/palindrome_view.dart';
 import 'package:first_program/view/simple_interest.dart';
+import 'package:first_program/view/stack_view.dart';
 import 'package:first_program/view/student_view.dart';
 import 'package:flutter/material.dart';
-import 'package:first_program/common/navigation_button.dart'; // Import the custom button
+import 'package:first_program/common/navigation_button.dart';
+import 'package:flutter/services.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        systemNavigationBarColor: Colors.white,
+        systemNavigationBarIconBrightness: Brightness.dark,
+      ),
+    );
+
     final buttons = const [
       NavigationButton(title: "Go to First View", destination: FirstView()),
       NavigationButton(title: "Go to Sample Interest", destination: SiView()),
@@ -54,6 +64,11 @@ class Dashboard extends StatelessWidget {
         title: "Go to Calculator View",
         destination: CalculatorView(),
       ),
+      NavigationButton(
+        title: "Go to Main Screen",
+        destination: MainScreenView(),
+      ),
+      NavigationButton(title: "Go to Stack View", destination: StackView()),
     ];
 
     return Scaffold(
@@ -67,7 +82,7 @@ class Dashboard extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: buttons.reversed.toList(), // Reversed here
+            children: buttons.reversed.toList(),
           ),
         ),
       ),
